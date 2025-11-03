@@ -46,6 +46,9 @@ jobs:
             --build-arg KAKAO_CLIENT_SECRET=${{ secrets.KAKAO_CLIENT_SECRET }} \
             --build-arg NAVER_CLIENT_ID=${{ secrets.NAVER_CLIENT_ID }} \
             --build-arg NAVER_CLIENT_SECRET=${{ secrets.NAVER_CLIENT_SECRET }} \
+            --build-arg MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }} \
+            --build-arg SMS_ACCESS=${{ secrets.SMS_ACCESS }} \
+            --build-arg SMS_SECRET_KEY=${{ secrets.SMS_SECRET_KEY }} \
           -t crew-station .
           docker run -d -p 80:10000 --name crew-station \
             -e EC2_HOST=${{ secrets.EC2_HOST }} \
@@ -61,6 +64,9 @@ jobs:
             -e NAVER_CLIENT_ID=${{ secrets.NAVER_CLIENT_ID }} \
             -e NAVER_CLIENT_SECRET=${{ secrets.NAVER_CLIENT_SECRET }} \
             -e JWT_SECRET=${{ secrets.JWT_SECRET }} \
+            -e MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }} \
+            -e SMS_ACCESS=${{ secrets.SMS_ACCESS }} \
+            -e SMS_SECRET_KEY=${{ secrets.SMS_SECRET_KEY }} \
             crew-station
             
     - name: Clean up not used images
