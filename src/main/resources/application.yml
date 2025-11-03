@@ -39,18 +39,6 @@ spring:
       max-file-size: 5MB
       max-request-size: 15MB
 
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ccocco55@gmail.com
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
@@ -67,13 +55,6 @@ aws:
   s3:
     bucket-name: ${AWS_S3_BUCKET}
   region: ${AWS_REGION}
-
-
-# sms api key
-sms:
-  api:
-    access: ${SMS_ACCESS}
-    secret: ${SMS_SECRET_KEY}
 
 
 logging:
